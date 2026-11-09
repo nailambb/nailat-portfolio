@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = ["TypeScript", "JavaScript", "Python", "Java", "C++", "Astro Engine", "Tailwind CSS", "GSAP Motion"];
+const projects = [
+  { title: "Algorithmic Ecosystem Studio", desc: "A browser-based generative landscape studio built with math and physics frameworks.", tech: "TypeScript / Canvas API" },
+  { title: "Compiler Pipeline Engine", desc: "Built a fully operational compiler syntax analyzer from scratch to parser level.", tech: "Python / Data Engineering" }
+];
+---
+
+<BaseLayout title="Projects & Skills">
+  <div class="max-w-4xl mx-auto py-4">
+    <h2 class="text-3xl font-serif font-black mb-8">My Engineering Lab Notebook</h2>
+    
+    <!-- Skills Subsection -->
+    <div class="mb-12">
+      <h3 class="text-sm font-mono text-[#8c7a6b] mb-4">// Technical Toolbox</h3>
+      <div class="flex flex-wrap gap-3">
+        {skills.map((skill, index) => (
+          <span class={`px-4 py-2 bg-[#f4ebd0] border border-[#8c7a6b] rounded-md font-mono text-xs shadow-xs transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'}`}>
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Projects System Matrix Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      {projects.map((proj, index) => (
+        <div class={`bg-white border-2 border-[#8c7a6b] p-6 rounded-2xl shadow-xs transform transition-all hover:-translate-y-1 hover:shadow-sm ${index % 2 === 0 ? '-rotate-1' : 'rotate-1'}`}>
+          <span class="text-[10px] font-mono text-[#607254] font-bold block mb-1 uppercase">{proj.tech}</span>
+          <h4 class="text-xl font-serif font-bold mb-2">{proj.title}</h4>
+          <p class="text-sm text-[#5c4d4d] mb-4 leading-relaxed">{proj.desc}</p>
+          <a href="#" class="inline-block text-xs font-mono font-bold border-b border-black pb-0.5 hover:text-[#607254] hover:border-[#607254] transition-colors">
+            VIEW REPOSITORY ↗
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

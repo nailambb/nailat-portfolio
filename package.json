@@ -1,0 +1,21 @@
+{
+  "name": "nailat-portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.8",
+    "gsap": "^3.15.1",
+    "tailwindcss": "^4.3.5"
+  }
+}

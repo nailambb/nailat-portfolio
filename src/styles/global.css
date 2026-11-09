@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Apply clean, hardware-accelerated text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Define a universal base text hierarchy */
+    @apply font-sans text-base antialiased bg-[#faf6ee] text-[#3c2f2f];
+  }
+
+  /* Make sure headings always use your formal serif font */
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight text-[#2d2222];
+  }
+}

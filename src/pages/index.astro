@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <div class="relative min-h-[65vh] flex flex-col justify-center items-start max-w-3xl mx-auto">
+    
+    <span class="text-xs font-mono tracking-widest text-[#8c7a6b] uppercase mb-2">// Computer Science Portfolio</span>
+    <h1 class="text-4xl md:text-6xl font-serif font-black leading-tight mb-6">
+      Building software that feels <span class="italic text-[#607254] underline decoration-wavy decoration-[#eddeb3] underline-offset-8">natural</span>.
+    </h1>
+    <p class="text-base md:text-lg leading-relaxed text-[#5c4d4d] max-w-xl mb-8">
+      Hi, I'm Nailat! I blend clean frontend design with system engineering to build creative web tools. Welcome to my digital workshop.
+    </p>
+    
+    <a href="/projects" class="bg-[#607254] text-[#faf6ee] px-6 py-3 rounded-full font-medium inline-block transform hover:scale-105 active:scale-95 transition-all shadow-sm">
+      Explore My Workshop ↗
+    </a>
+
+    <!-- Interactive Draggable Cottagecore Sticker -->
+    <div id="interactive-sticker" class="absolute right-0 top-4 md:top-12 w-28 h-28 cursor-grab active:cursor-grabbing select-none z-10 bg-white/60 p-3 rounded-2xl border border-dashed border-[#8c7a6b] shadow-sm rotate-6 flex flex-col items-center justify-center">
+      <!-- Embedded inline temporary SVG graphic -->
+      <svg xmlns="http://w3.org" class="w-12 h-12 text-[#607254]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
+      <span class="text-[10px] font-mono mt-2 text-[#8c7a6b]">drag or click me!</span>
+    </div>
+
+  </div>
+
+  <script>
+    import { gsap } from 'gsap';
+    import { Draggable } from 'gsap/Draggable';
+
+    function initHomeAnimations() {
+      gsap.registerPlugin(Draggable);
+
+      const sticker = document.getElementById("interactive-sticker");
+      if (!sticker) return;
+
+      // Click Elastic Feedback Physics Animation
+      sticker.addEventListener('click', () => {
+        gsap.to(sticker, {
+          scale: 0.9,
+          rotation: -4,
+          duration: 0.1,
+          yoyo: true,
+          repeat: 1,
+          ease: "power1.inOut"
+        });
+      });
+
+      // Draggable Interface Deployment
+      Draggable.create(sticker, {
+        type: "x,y",
+        edgeResistance: 0.4,
+        onPress: function() {
+          gsap.to(this.target, { scale: 0.95, duration: 0.1 });
+        },
+        onRelease: function() {
+          gsap.to(this.target, { scale: 1, rotation: 6, duration: 0.3, ease: "elastic.out(1, 0.4)" });
+        }
+      });
+    }
+
+    document.addEventListener('astro:page-load', initHomeAnimations);
+  </script>
+</BaseLayout>

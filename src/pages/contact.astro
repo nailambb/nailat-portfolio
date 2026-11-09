@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact">
+  <div class="max-w-md mx-auto py-4 text-center">
+    <span class="text-4xl block mb-2">📬</span>
+    <h2 class="text-3xl font-serif font-black mb-3">Drop a Line in the Mailbox</h2>
+    <p class="text-sm text-[#5c4d4d] mb-8 max-w-sm mx-auto">
+      Whether you want to talk about open-source code, career opportunities, or plant care tips, my inbox is open!
+    </p>
+
+    <form class="bg-white border-2 border-[#8c7a6b] p-6 md:p-8 rounded-2xl shadow-xs text-left space-y-4 transform rotate-[0.5deg]">
+      <div>
+        <label class="block font-mono text-xs text-[#8c7a6b] mb-1">Your Identity / Company</label>
+        <input type="text" required class="w-full bg-[#faf6ee]/20 border border-[#8c7a6b] px-4 py-2 rounded-lg font-mono text-sm focus:outline-none focus:ring-1 focus:ring-[#607254]" />
+      </div>
+      <div>
+        <label class="block font-mono text-xs text-[#8c7a6b] mb-1">Return Email Channel</label>
+        <input type="email" required class="w-full bg-[#faf6ee]/20 border border-[#8c7a6b] px-4 py-2 rounded-lg font-mono text-sm focus:outline-none focus:ring-1 focus:ring-[#607254]" />
+      </div>
+      <div>
+        <label class="block font-mono text-xs text-[#8c7a6b] mb-1">Letter Content</label>
+        <textarea rows="4" required class="w-full bg-[#faf6ee]/20 border border-[#8c7a6b] px-4 py-2 rounded-lg font-mono text-sm focus:outline-none focus:ring-1 focus:ring-[#607254] resize-none"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-[#607254] text-[#faf6ee] font-medium py-2.5 rounded-lg hover:bg-[#4f5e45] transition-colors shadow-xs cursor-pointer">
+        Send Letter ↗
+      </button>
+    </form>
+  </div>
+</BaseLayout>

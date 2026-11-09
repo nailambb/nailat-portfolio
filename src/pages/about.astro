@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Me">
+  <div class="max-w-4xl mx-auto py-4 grid md:grid-cols-5 gap-12 items-center">
+    
+    <div class="md:col-span-3 space-y-6">
+      <h2 class="text-3xl md:text-4xl font-serif font-black mb-4">Hello, I'm Nailat 💫</h2>
+      <p class="text-base leading-relaxed text-[#5c4d4d]">
+        I am a Computer Science student who treats programming less like a corporate grid and more like a digital craft workshop. I enjoy writing clean, type-safe algorithms on the backend while exploring whimsical web design layouts on the frontend.
+      </p>
+      <p class="text-base leading-relaxed text-[#5c4d4d]">
+        When I am not fighting merge conflicts or engineering interactive user flows, you can usually find me sketch journaling, exploring nature paths, or managing my growing desk ecosystem of real-world plants.
+      </p>
+      
+      <div class="p-5 bg-[#f4ebd0]/50 border border-dashed border-[#8c7a6b]/60 rounded-xl rotate-[-0.5deg]">
+        <h3 class="font-mono text-xs uppercase tracking-wider text-[#8c7a6b] mb-2">Technical Foundations</h3>
+        <ul class="font-mono text-xs space-y-1.5 text-[#5c4d4d]">
+          <li>✦ Data Structures & Algorithms Mastery</li>
+          <li>✦ Modular UI/UX Prototyping</li>
+          <li>✦ Functional Architecture Systems</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="md:col-span-2 flex justify-center">
+      <div class="bg-white p-4 pb-10 border-2 border-[#8c7a6b] shadow-sm transform rotate-3 hover:rotate-0 transition-transform duration-300 max-w-[240px]">
+        <div class="w-full aspect-square bg-[#e2dcd0] rounded-sm flex items-center justify-center border border-[#c5baab]">
+          <span class="text-4xl">🌿</span>
+        </div>
+        <p class="font-serif text-xs text-center italic text-[#8c7a6b] mt-4">nailat_sketchbook_final.png</p>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>
