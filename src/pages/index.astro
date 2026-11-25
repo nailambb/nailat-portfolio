@@ -1,66 +1,759 @@
+
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Home">
-  <div class="relative min-h-[65vh] flex flex-col justify-center items-start max-w-3xl mx-auto">
-    
-    <span class="text-xs font-mono tracking-widest text-[#8c7a6b] uppercase mb-2">// Computer Science Portfolio</span>
-    <h1 class="text-4xl md:text-6xl font-serif font-black leading-tight mb-6">
-      Building software that feels <span class="italic text-[#607254] underline decoration-wavy decoration-[#eddeb3] underline-offset-8">natural</span>.
-    </h1>
-    <p class="text-base md:text-lg leading-relaxed text-[#5c4d4d] max-w-xl mb-8">
-      Hi, I'm Nailat! I blend clean frontend design with system engineering to build creative web tools. Welcome to my digital workshop.
-    </p>
-    
-    <a href="/projects" class="bg-[#607254] text-[#faf6ee] px-6 py-3 rounded-full font-medium inline-block transform hover:scale-105 active:scale-95 transition-all shadow-sm">
-      Explore My Workshop ↗
-    </a>
 
-    <!-- Interactive Draggable Cottagecore Sticker -->
-    <div id="interactive-sticker" class="absolute right-0 top-4 md:top-12 w-28 h-28 cursor-grab active:cursor-grabbing select-none z-10 bg-white/60 p-3 rounded-2xl border border-dashed border-[#8c7a6b] shadow-sm rotate-6 flex flex-col items-center justify-center">
-      <!-- Embedded inline temporary SVG graphic -->
-      <svg xmlns="http://w3.org" class="w-12 h-12 text-[#607254]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
-      <span class="text-[10px] font-mono mt-2 text-[#8c7a6b]">drag or click me!</span>
+  <!-- HERO / JOURNAL COVER -->
+  <section class="hero relative min-h-[85vh] overflow-hidden px-6 py-16 md:px-12">
+
+    <div class="mx-auto max-w-6xl">
+
+      <!-- Small handwritten heading -->
+      <p class="handwritten mb-12 text-center text-2xl text-paper-cream">
+        welcome to my little corner of the internet ♡
+      </p>
+
+      <div class="grid min-h-[60vh] items-center gap-12 md:grid-cols-2">
+
+        <!-- INTRODUCTION -->
+        <div class="relative z-10">
+
+          <span class="font-mono text-xs uppercase tracking-[0.2em] text-paper-cream">
+            // computer science portfolio
+          </span>
+
+          <h1 class="serif mt-5 text-7xl font-semibold leading-[0.9] text-botanical-dark md:text-8xl">
+            Hello,
+            <br />
+            I'm Nailat<span class="text-paper-cream">.</span>
+          </h1>
+
+          <p class="mt-8 max-w-lg text-lg leading-8 text-botanical-dark">
+            Computer science student, curious researcher,
+            and builder of things that bring technology
+            and creativity together.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+
+            <a href="/projects" class="hero-button">
+              explore my work ↗
+            </a>
+
+            <a href="/about" class="about-link">
+              a little about me
+            </a>
+
+          </div>
+
+          <p class="handwritten mt-12 text-2xl text-paper-cream">
+            currently collecting ideas & making things ✿
+          </p>
+
+        </div>
+
+        <!-- CHARACTER / DRAGGABLE STICKER -->
+        <div class="character-area relative mx-auto w-full max-w-md">
+
+          <div class="character-background"></div>
+
+          <!-- Decorative stars -->
+          <span class="decoration decoration-one">✳</span>
+          <span class="decoration decoration-two">✧</span>
+          <span class="decoration decoration-three">♡</span>
+
+          <div
+            id="interactive-sticker"
+            class="character-sticker absolute inset-0 z-10 mx-auto flex cursor-grab select-none flex-col items-center justify-center active:cursor-grabbing"
+            role="button"
+            tabindex="0"
+            aria-label="Draggable illustrated character. Click to make it bounce."
+          >
+
+            <!-- Temporary character illustration -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 300 370"
+              class="w-full max-w-[280px]"
+              fill="none"
+              aria-hidden="true"
+            >
+
+              <!-- Hair -->
+              <path
+                d="M67 145 Q42 40 147 32 Q260 25 258 143
+                L241 229 L65 220 Z"
+                fill="#0A3323"
+                stroke="#0A3323"
+                stroke-width="5"
+              />
+
+              <!-- Face -->
+              <path
+                d="M83 112 Q83 65 151 64 Q221 64 222 117
+                L216 192 Q207 247 152 254 Q96 247 86 192 Z"
+                fill="#E9DCC3"
+                stroke="#933B5B"
+                stroke-width="4"
+              />
+
+              <!-- Hair fringe -->
+              <path
+                d="M83 126 Q112 74 133 112
+                Q153 133 169 102
+                Q195 80 222 128"
+                stroke="#0A3323"
+                stroke-width="13"
+                stroke-linecap="round"
+              />
+
+              <!-- Eyes -->
+              <path
+                d="M113 158 Q121 169 130 158
+                M174 158 Q183 169 192 158"
+                stroke="#0A3323"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+
+              <!-- Smile -->
+              <path
+                d="M133 195 Q153 215 174 195"
+                stroke="#933B5B"
+                stroke-width="4"
+                stroke-linecap="round"
+              />
+
+              <!-- Blush -->
+              <ellipse cx="104" cy="187" rx="11" ry="6" fill="#D9A6B5"/>
+              <ellipse cx="203" cy="187" rx="11" ry="6" fill="#D9A6B5"/>
+
+              <!-- Body -->
+              <path
+                d="M88 257 Q150 235 215 257
+                L252 362 L50 362 Z"
+                fill="#B5728A"
+                stroke="#933B5B"
+                stroke-width="4"
+              />
+
+              <!-- Waving arm -->
+              <path
+                d="M211 277 Q249 248 254 199"
+                stroke="#E9DCC3"
+                stroke-width="15"
+                stroke-linecap="round"
+              />
+
+              <!-- Hand -->
+              <path
+                d="M254 199 Q244 180 255 168
+                M254 199 Q266 180 276 181"
+                stroke="#933B5B"
+                stroke-width="5"
+                stroke-linecap="round"
+              />
+
+              <!-- Shirt flower -->
+              <g transform="translate(151 305)">
+                <circle r="8" fill="#F7F4D5"/>
+                <circle cy="-13" r="7" fill="#F7F4D5"/>
+                <circle cx="13" r="7" fill="#F7F4D5"/>
+                <circle cy="13" r="7" fill="#F7F4D5"/>
+                <circle cx="-13" r="7" fill="#F7F4D5"/>
+                <circle r="4" fill="#933B5B"/>
+              </g>
+
+            </svg>
+
+            <span class="handwritten mt-2 text-2xl text-paper-cream">
+              drag me around! ♡
+            </span>
+
+          </div>
+
+          <p class="character-caption handwritten">
+            your friendly neighborhood developer
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="handwritten mt-12 text-center text-2xl text-paper-cream">
+        keep scrolling ↓
+      </div>
+
     </div>
+  </section>
 
-  </div>
 
+  <!-- INTERACTIVE STORY -->
+  <section id="story" class="story-section">
+
+    <div class="story-stage">
+
+      <div class="story-title">
+        <p class="handwritten text-2xl text-floral-amaranth">
+          a little introduction...
+        </p>
+
+        <h2 class="serif text-5xl text-botanical-dark md:text-6xl">
+          Pieces of me
+        </h2>
+      </div>
+
+      <!-- First note -->
+      <article class="story-note note-one">
+        <span class="note-pin"></span>
+
+        <p class="handwritten text-2xl text-floral-amaranth">
+          01 / the student
+        </p>
+
+        <h3 class="serif text-4xl text-botanical-dark">
+          Always curious.
+        </h3>
+
+        <p class="mt-4 leading-7 text-botanical-dark/80">
+          I'm studying computer science at Johns Hopkins,
+          with interests in computational medicine and
+          computer-integrated surgery.
+        </p>
+
+        <p class="handwritten mt-5 text-xl text-floral-amaranth">
+          learning something new every day ✿
+        </p>
+      </article>
+
+      <!-- Second note -->
+      <article class="story-note note-two">
+        <span class="note-pin"></span>
+
+        <p class="handwritten text-2xl text-floral-amaranth">
+          02 / the builder
+        </p>
+
+        <h3 class="serif text-4xl text-botanical-dark">
+          Ideas into reality.
+        </h3>
+
+        <p class="mt-4 leading-7 text-botanical-dark/80">
+          I love building software, exploring AI,
+          and creating tools that make complicated
+          problems a little easier.
+        </p>
+
+        <p class="handwritten mt-5 text-xl text-floral-amaranth">
+          code, coffee & creativity ♡
+        </p>
+      </article>
+
+      <!-- Third note -->
+      <article class="story-note note-three">
+        <span class="note-pin"></span>
+
+        <p class="handwritten text-2xl text-floral-amaranth">
+          03 / the creative
+        </p>
+
+        <h3 class="serif text-4xl text-botanical-dark">
+          Beyond the screen.
+        </h3>
+
+        <p class="mt-4 leading-7 text-botanical-dark/80">
+          Outside of coding, I enjoy creative projects,
+          experimenting with new ideas, and finding
+          inspiration in everyday details.
+        </p>
+
+        <p class="handwritten mt-5 text-xl text-floral-amaranth">
+          making room for little things 🌷
+        </p>
+      </article>
+
+      <!-- Decorative illustration -->
+      <div class="story-decoration">
+        <span class="handwritten text-xl text-floral-amaranth">
+          turning the page...
+        </span>
+        <span class="text-7xl">🌷</span>
+      </div>
+
+      <span class="story-counter handwritten">
+        <span id="chapter-number">01</span> / 03
+      </span>
+
+    </div>
+  </section>
+
+
+  <!-- PROJECT PREVIEW -->
+  <section class="projects-section px-6 py-24">
+
+    <div class="mx-auto max-w-6xl">
+
+      <p class="handwritten text-2xl text-floral-amaranth">
+        little things I've been working on
+      </p>
+
+      <div class="mb-12 mt-3 flex flex-wrap items-end justify-between gap-4">
+
+        <h2 class="serif text-6xl text-botanical-dark">
+          My projects
+        </h2>
+
+        <a href="/projects" class="about-link">
+          explore everything →
+        </a>
+
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <a href="/projects" class="project-card rotate-[-2deg]">
+          <span class="handwritten text-xl text-floral-amaranth">
+            01 / creativity
+          </span>
+          <div class="project-art">🧵</div>
+          <h3 class="serif text-3xl">Alter'd</h3>
+          <p>AI-powered outfit and alteration exploration.</p>
+        </a>
+
+        <a href="/projects" class="project-card rotate-[2deg]">
+          <span class="handwritten text-xl text-floral-amaranth">
+            02 / technology
+          </span>
+          <div class="project-art">✈</div>
+          <h3 class="serif text-3xl">FireFlies</h3>
+          <p>A collaborative airport ride-sharing application.</p>
+        </a>
+
+        <a href="/projects" class="project-card rotate-[-1deg]">
+          <span class="handwritten text-xl text-floral-amaranth">
+            03 / AI & learning
+          </span>
+          <div class="project-art">✉</div>
+          <h3 class="serif text-3xl">AI Interview Coach</h3>
+          <p>An interactive interview preparation experience.</p>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="px-6 py-24">
+
+    <div class="contact-paper mx-auto max-w-3xl text-center">
+
+      <p class="handwritten text-2xl text-floral-amaranth">
+        before you go...
+      </p>
+
+      <h2 class="serif mt-4 text-5xl text-botanical-dark">
+        Let's make something meaningful.
+      </h2>
+
+      <p class="mx-auto mt-5 max-w-lg leading-7 text-botanical-dark/80">
+        Have an interesting idea, opportunity, or just want
+        to say hello? I'd love to hear from you.
+      </p>
+
+      <a href="/contact" class="hero-button mt-8 inline-block">
+        leave me a little note ♡
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- GSAP INTERACTIONS -->
   <script>
-    import { gsap } from 'gsap';
-    import { Draggable } from 'gsap/Draggable';
+    import gsap from "gsap";
+    import { Draggable } from "gsap/Draggable";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-    function initHomeAnimations() {
-      gsap.registerPlugin(Draggable);
+    gsap.registerPlugin(Draggable, ScrollTrigger);
+
+    let draggableInstance;
+    let clickHandler;
+    let storyAnimation;
+    let storyMedia;
+
+    function cleanupHome() {
+      draggableInstance?.kill();
+      draggableInstance = undefined;
 
       const sticker = document.getElementById("interactive-sticker");
-      if (!sticker) return;
 
-      // Click Elastic Feedback Physics Animation
-      sticker.addEventListener('click', () => {
-        gsap.to(sticker, {
-          scale: 0.9,
-          rotation: -4,
-          duration: 0.1,
-          yoyo: true,
-          repeat: 1,
-          ease: "power1.inOut"
-        });
-      });
+      if (sticker && clickHandler) {
+        sticker.removeEventListener("click", clickHandler);
+      }
 
-      // Draggable Interface Deployment
-      Draggable.create(sticker, {
-        type: "x,y",
-        edgeResistance: 0.4,
-        onPress: function() {
-          gsap.to(this.target, { scale: 0.95, duration: 0.1 });
-        },
-        onRelease: function() {
-          gsap.to(this.target, { scale: 1, rotation: 6, duration: 0.3, ease: "elastic.out(1, 0.4)" });
-        }
-      });
+      clickHandler = undefined;
+
+      storyAnimation?.scrollTrigger?.kill();
+      storyAnimation?.kill();
+      storyAnimation = undefined;
+
+      storyMedia?.revert();
+      storyMedia = undefined;
     }
 
-    document.addEventListener('astro:page-load', initHomeAnimations);
+    function initHomeAnimations() {
+      cleanupHome();
+
+      const sticker = document.getElementById("interactive-sticker");
+
+      if (sticker) {
+        clickHandler = () => {
+          gsap.to(sticker, {
+            scale: 0.92,
+            rotation: -5,
+            duration: 0.12,
+            yoyo: true,
+            repeat: 1,
+            ease: "power1.inOut",
+          });
+        };
+
+        sticker.addEventListener("click", clickHandler);
+
+        draggableInstance = Draggable.create(sticker, {
+          type: "x,y",
+          edgeResistance: 0.65,
+          bounds: ".character-area",
+
+          onPress() {
+            gsap.to(sticker, {
+              scale: 0.95,
+              duration: 0.15,
+            });
+          },
+
+          onRelease() {
+            gsap.to(sticker, {
+              scale: 1,
+              rotation: 4,
+              duration: 0.5,
+              ease: "elastic.out(1, 0.4)",
+            });
+          },
+        })[0];
+      }
+
+      const notes = gsap.utils.toArray<HTMLElement>(".story-note");
+      const counter = document.getElementById("chapter-number");
+
+      if (!notes.length) return;
+
+      storyMedia = gsap.matchMedia();
+
+      storyMedia.add(
+        "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+        () => {
+          gsap.set(notes, {
+            autoAlpha: 0,
+            y: 60,
+            rotation: -5,
+          });
+
+          gsap.set(notes[0], {
+            autoAlpha: 1,
+            y: 0,
+            rotation: -3,
+          });
+
+          const timeline = gsap.timeline({
+            scrollTrigger: {
+              trigger: ".story-section",
+              start: "top top",
+              end: "+=1800",
+              pin: ".story-stage",
+              scrub: 1,
+              anticipatePin: 1,
+            },
+          });
+
+          timeline.to(notes[0], {
+            autoAlpha: 0,
+            y: -50,
+            rotation: 5,
+          });
+
+          timeline.to(notes[1], {
+            autoAlpha: 1,
+            y: 0,
+            rotation: 3,
+          }, "<");
+
+          timeline.call(() => {
+            if (counter) counter.textContent = "02";
+          });
+
+          timeline.to(notes[1], {
+            autoAlpha: 0,
+            y: -50,
+            rotation: -5,
+          });
+
+          timeline.to(notes[2], {
+            autoAlpha: 1,
+            y: 0,
+            rotation: -2,
+          }, "<");
+
+          timeline.call(() => {
+            if (counter) counter.textContent = "03";
+          });
+
+          storyAnimation = timeline;
+
+          return () => {
+            timeline.scrollTrigger?.kill();
+            timeline.kill();
+            storyAnimation = undefined;
+          };
+        }
+      );
+    }
+
+    document.addEventListener("astro:page-load", initHomeAnimations);
+    document.addEventListener("astro:before-swap", cleanupHome);
   </script>
+
+
+  <style>
+    .hero {
+      background-color: #B5728A;
+      background-image: radial-gradient(
+        rgba(247, 244, 213, 0.5) 0.8px,
+        transparent 0.8px
+      );
+      background-size: 22px 22px;
+    }
+
+    .hero-button {
+      padding: 14px 25px;
+      background: #933B5B;
+      color: #F7F4D5;
+      border-radius: 3px;
+      transition: all 0.25s ease;
+    }
+
+    .hero-button:hover {
+      background: #0A3323;
+      transform: translateY(-4px) rotate(-2deg);
+    }
+
+    .about-link {
+      color: #0A3323;
+      border-bottom: 1px dashed #0A3323;
+      padding-bottom: 5px;
+    }
+
+    .character-area {
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .character-background {
+      position: absolute;
+      width: 80%;
+      aspect-ratio: 1;
+      border: 1px dashed #F7F4D5;
+      border-radius: 50%;
+    }
+
+    .character-sticker {
+      width: 80%;
+      touch-action: none;
+    }
+
+    .character-caption {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #F7F4D5;
+      font-size: 1.3rem;
+      transform: rotate(-5deg);
+    }
+
+    .decoration {
+      position: absolute;
+      color: #F7F4D5;
+      font-size: 2rem;
+    }
+
+    .decoration-one { top: 8%; left: 5%; }
+    .decoration-two { top: 20%; right: 5%; }
+    .decoration-three { bottom: 12%; left: 4%; }
+
+    .story-section {
+      background: #F7F4D5;
+    }
+
+    .story-stage {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .story-title {
+      position: absolute;
+      top: 9%;
+      left: 10%;
+    }
+
+    .story-note {
+      position: absolute;
+      top: 32%;
+      left: 14%;
+      width: min(420px, 38vw);
+      min-height: 300px;
+      padding: 2.5rem;
+      background: #E9DCC3;
+      border: 1px solid #A99D7E;
+      box-shadow: 5px 8px 18px rgba(10, 51, 35, 0.12);
+    }
+
+    .note-two {
+      background: #E8C8D1;
+    }
+
+    .note-three {
+      background: #DCE6DC;
+    }
+
+    .note-pin {
+      position: absolute;
+      top: -12px;
+      left: 48%;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #933B5B;
+      border: 3px solid #F7F4D5;
+    }
+
+    .story-decoration {
+      position: absolute;
+      right: 15%;
+      top: 42%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      animation: flowerFloat 4s ease-in-out infinite;
+    }
+
+    .story-counter {
+      position: absolute;
+      bottom: 8%;
+      right: 10%;
+      font-size: 1.8rem;
+      color: #933B5B;
+    }
+
+    .project-card {
+      display: block;
+      padding: 1.5rem;
+      background: #E9DCC3;
+      border: 1px solid #A99D7E;
+      box-shadow: 4px 6px 12px rgba(10, 51, 35, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) rotate(0deg);
+    }
+
+    .project-art {
+      height: 180px;
+      display: grid;
+      place-items: center;
+      font-size: 5rem;
+    }
+
+    .contact-paper {
+      padding: 4rem 2rem;
+      background: #F7F4D5;
+      border: 1px solid #A99D7E;
+      box-shadow: 6px 8px 0 rgba(10, 51, 35, 0.1);
+      transform: rotate(-1deg);
+    }
+
+    @keyframes flowerFloat {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-12px) rotate(3deg); }
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .character-area {
+        min-height: 320px;
+        max-width: 300px;
+      }
+
+      .story-stage {
+        height: auto;
+        min-height: auto;
+        padding: 5rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+        overflow: visible;
+      }
+
+      .story-title,
+      .story-note,
+      .story-decoration,
+      .story-counter {
+        position: relative;
+        inset: auto;
+        width: 100%;
+      }
+
+      .story-note {
+        min-height: auto;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+
+      .story-decoration {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .story-counter {
+        text-align: right;
+      }
+
+      .contact-paper {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .story-decoration {
+        animation: none;
+      }
+    }
+  </style>
+
 </BaseLayout>

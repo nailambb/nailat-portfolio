@@ -1,10 +1,71 @@
 ---
 ---
-<nav class="w-full py-6 px-8 flex justify-between items-center border-b border-dashed border-[#8c7a6b]/40 max-w-5xl mx-auto">
-  <a href="/" class="font-serif text-xl font-bold tracking-tight hover:skew-x-2 transition-transform">🌱 nailat.dev</a>
-  <div class="flex gap-6 md:gap-8 font-medium text-sm md:text-base">
-    <a href="/about" class="hover:underline decoration-wavy decoration-[#a1b59c] underline-offset-4">about</a>
-    <a href="/projects" class="hover:underline decoration-wavy decoration-[#a1b59c] underline-offset-4">projects & skills</a>
-    <a href="/contact" class="hover:underline decoration-wavy decoration-[#a1b59c] underline-offset-4">contact</a>
+<nav class="site-nav w-full px-6 md:px-12 py-5 flex justify-between items-center max-w-6xl mx-auto">
+
+  <a
+    href="/"
+    class="font-serif text-2xl font-semibold tracking-tight text-botanical-dark hover:rotate-[-3deg] transition-transform"
+  >
+    nailat<span class="text-floral-amaranth">.</span>
+    <span class="handwritten text-lg font-normal">dev ♡</span>
+  </a>
+
+  <div class="flex gap-4 md:gap-8 items-center font-medium text-sm md:text-base text-botanical-dark">
+
+    <a href="/about" class="nav-link">
+      about
+    </a>
+
+    <a href="/projects" class="nav-link">
+      work & projects
+    </a>
+
+    <a href="/contact" class="nav-link">
+      say hello ✿
+    </a>
+
   </div>
+
 </nav>
+
+<style>
+  .site-nav {
+    position: relative;
+    z-index: 30;
+  }
+
+  .nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: #933B5B;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #933B5B;
+    transition: width 0.25s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .site-nav {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .nav-link {
+      font-size: 0.75rem;
+    }
+  }
+</style>
